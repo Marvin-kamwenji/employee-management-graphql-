@@ -1,0 +1,25 @@
+type Employee {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    department: String!
+    designation: String!
+}
+
+input EmployeeInput {
+    firstName: String!
+    lastName: String!
+    department: String!
+    designation: String!
+}
+
+type  Query {
+findAllEmployees: [Employee]!
+findEmployeeById(id: ID!): Employee
+}
+
+type Mutation {
+   createEmployee(addedEmployee: EmployeeInput!): Employee!
+   updateEmployee(id: ID!, updatedEmployee: EmployeeInput!): Employee
+   deleteEmployee(id: ID!): Boolean!
+}
